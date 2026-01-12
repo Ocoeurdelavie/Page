@@ -16,8 +16,8 @@ body {
 /* CONTENEUR BANNIÈRE */
 .banniere {
     width: 100%;
-    height: 320px;      /* encore un peu plus haute */
-    overflow: hidden;   /* coupe l'excès si nécessaire */
+    height: 420px;   /* ⬅️ bannière plus grande */
+    overflow: hidden;
     margin: 0;
     padding: 0;
 }
@@ -159,4 +159,5 @@ a img:hover {
         display: none;
     }
 }
+
 }
