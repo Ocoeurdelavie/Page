@@ -161,48 +161,69 @@ a img:hover {
 }
 
 /* ============================= */
-/* VERSION MOBILE UNIQUEMENT */
+/* VERSION MOBILE PROPRE & ALIGNÉE */
 /* ============================= */
 
 @media (max-width: 768px) {
 
-    /* Bannière plus petite */
-    .banniere {
-        height: 200px;
-    }
-
-    /* Contenu plus aéré */
+    /* Conteneur général */
     .contenu {
         margin: 20px auto;
-        padding: 0 15px;
-        text-align: center;
-    }
-
-    /* Titres */
-    h2 {
-        font-size: 1.35rem;
-        margin-top: 30px;
-    }
-
-    h3 {
-        margin: 10px 0;
-        font-size: 1rem;
-    }
-
-    /* Bulles bleues visibles sur mobile */
-    .bulle-bleue {
-        background: linear-gradient(135deg, #e6f1f8, #f4f9fd);
-        border-left: 5px solid #8bbcd9;
-        padding: 20px;
-        margin: 25px 0;
-        border-radius: 18px;
-        box-shadow: 0 8px 18px rgba(58, 90, 120, 0.12);
+        padding: 0 16px;
         text-align: left;
     }
 
-    .bulle-bleue h3 {
-        margin-bottom: 15px;
+    /* Bannière */
+    .banniere {
+        height: 100%;
+    }
+
+    /* Titres sections */
+    h2 {
+        font-size: 1.35rem;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    h2::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Textes */
+    h3 {
+        margin: 8px 0;
+        font-size: 1rem;
         line-height: 1.5;
+    }
+
+    /* CONTACT : mise en valeur */
+    h3 a {
+        display: inline-block;
+        margin-top: 6px;
+        font-weight: 600;
+        color: #3a5a78;
+        word-break: break-all; /* ✅ email toujours visible */
+        text-decoration: none;
+    }
+
+    h3 a:hover {
+        text-decoration: underline;
+    }
+
+    /* Bulles */
+    .bulle-bleue {
+        background: linear-gradient(135deg, #e6f1f8, #f4f9fd);
+        border-left: 5px solid #8bbcd9;
+        padding: 18px;
+        margin: 25px 0;
+        border-radius: 18px;
+        box-shadow: 0 8px 18px rgba(58, 90, 120, 0.12);
+    }
+
+    .bulle-bleue h3 {
+        margin-bottom: 12px;
+        color: #2f4f6f;
     }
 
     .bulle-bleue ul {
@@ -212,8 +233,9 @@ a img:hover {
 
     .bulle-bleue li {
         position: relative;
-        padding-left: 25px;
-        margin-bottom: 10px;
+        padding-left: 24px;
+        margin-bottom: 8px;
+        font-size: 0.95rem;
     }
 
     .bulle-bleue li::before {
@@ -224,10 +246,19 @@ a img:hover {
         color: #8bbcd9;
     }
 
-    /* Icônes réseaux plus grandes pour le tactile */
+    /* Réseaux sociaux bien centrés */
+    a {
+        margin: 15px 10px 0 0;
+    }
+
     a img {
-        width: 50px;
-        height: 50px;
+        width: 48px;
+        height: 48px;
+    }
+
+    /* Localisation */
+    .localisation-wrapper {
+        margin-top: 30px;
     }
 
     /* Papillon masqué */
@@ -235,5 +266,6 @@ a img:hover {
         display: none;
     }
 }
+
 
 
