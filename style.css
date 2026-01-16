@@ -175,20 +175,15 @@ a img:hover {
 @media (max-width: 768px) {
 
     .banniere {
-        height: 180px;              /* Hauteur adaptée au mobile */
-        overflow: hidden;
-        display: flex;
-        justify-content: center;     /* centre horizontalement */
-        align-items: center;         /* centre verticalement */
-        background-color: #f0f4f8;  /* couleur de fond si l'image ne remplit pas */
+        height: auto !important;   /* ❗ clé du problème */
+        overflow: visible;
     }
 
     .banniere img {
         width: 100%;
-        height: auto;               /* préserve le ratio */
-        max-height: 100%;           /* ne dépasse pas le container */
-        object-fit: contain;        /* garde l’image entière visible */
+        height: auto;              /* garde le ratio exact */
         display: block;
+        object-fit: unset;         /* on enlève tout recadrage */
     }
 }
 
@@ -299,5 +294,6 @@ a img:hover {
     }
     
 }
+
 
 
