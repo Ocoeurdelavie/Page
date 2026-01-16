@@ -180,7 +180,7 @@ a img:hover {
     }
 
     .banniere img {
-        width: 100%;
+        width: 50%;
         height: auto;              /* garde le ratio exact */
         display: block;
         object-fit: unset;         /* on enlève tout recadrage */
@@ -294,6 +294,7 @@ a img:hover {
     }
     
 }
+
 
 
 
