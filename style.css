@@ -175,15 +175,15 @@ a img:hover {
 @media (max-width: 768px) {
 
     .banniere {
-        height: auto !important;   /* ❗ clé du problème */
+        height: 100%;   
         overflow: visible;
     }
 
     .banniere img {
         width: 70%;
-        height: auto;              /* garde le ratio exact */
+        height: auto;              
         display: block;
-        object-fit: unset;         /* on enlève tout recadrage */
+        object-fit: unset;         
     }
 }
 
@@ -294,6 +294,7 @@ a img:hover {
     }
     
 }
+
 
 
 
