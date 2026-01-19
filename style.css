@@ -172,7 +172,7 @@ a img:hover {
         text-align: left;
     }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) { */
 
     .banniere {
         height: 100%;   
@@ -185,7 +185,7 @@ a img:hover {
         display: block;
         object-fit: unset;         
     }
-}
+/* } */
 
     /* Titres sections */
     h2 {
@@ -294,6 +294,7 @@ a img:hover {
     }
     
 }
+
 
 
 
