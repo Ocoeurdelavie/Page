@@ -15,22 +15,28 @@ body {
 
 /* CONTENEUR BANNIÈRE */
 .banniere {
-    width: 100%;
-    height: 420px;  
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
+  width: 100%;
+  height: 40vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #f0f0f0; /
 }
 
-/* IMAGE DANS LA BANNIÈRE */
 .banniere img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* garde le ratio, recadre si nécessaire */
-    display: block;
-    border-radius: 0;
+  width: 150%;
+  height: 150%;
+  object-fit: contain;
 }
 
+hr {
+  width: 25%;       /* or any width you want */
+  margin: 0 auto;   /* centers the element horizontally */
+  border: none;     /* optional: remove default border */
+  height: 2px;      /* optional: set thickness */
+  background-color: #3a5a78; /* optional: set color */
+}
 
 /* TITRE SECTIONS */
 h2 {
@@ -42,15 +48,7 @@ h2 {
 }
 
 /* LIGNE SOUS H2 */
-h2::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: #8bbcd9;
-    margin-top: 8px;
-    border-radius: 2px;
-}
+
 
 /* TEXTE H3 */
 h3 {
@@ -84,13 +82,9 @@ a img:hover {
     text-align: center;  /* centré sur mobile */
 }
 
-@media (min-width: 1200px) {
-    .contenu {
-        text-align: left;  /* texte à gauche sur grand écran */
-        padding-left: 20px;
-        padding-right: 0;
-        margin: 40px;
-    }
+
+
+
     .bulle-bleue {
         background: linear-gradient(135deg, #e6f1f8, #f4f9fd);
         border-left: 6px solid #8bbcd9;
@@ -98,8 +92,10 @@ a img:hover {
         margin: 40px 0;
         border-radius: 20px;
         box-shadow: 0 10px 25px rgba(58, 90, 120, 0.15);
+        text-align: left;
     }
 
+   
     /* TEXTE DANS LA BULLE */
     .bulle-bleue h3 {
         margin: 0 0 20px 0;
@@ -183,7 +179,7 @@ a img:hover {
         width: 70%;
         height: auto;              
         display: block;
-        object-fit: unset;         
+        object-fit: contain;         
     }
 /* } */
 
@@ -293,7 +289,6 @@ a img:hover {
         display: none;
     }
     
-}
 
 
 
