@@ -23,45 +23,83 @@ body {
     line-height: 1.6;
 }
 
-/* NAVBAR ULTRA CLEAN */
+/* NAVBAR VERSION AMÉLIORÉE (GARDE TA STRUCTURE) */
 nav {
-    background: rgba(255,255,255,0.8);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
 
 nav ul {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 30px;
+    justify-content: space-between; /* ⬅️ important */
+    padding: 0 30px;
 }
 
+/* pour espacer les liens */
+nav li {
+    list-style: none;
+}
+
+/* LIENS */
 nav a {
-    color: var(--noir);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111;
     text-decoration: none;
-    padding: 20px 10px;
+    padding: 20px 15px;
     font-weight: 500;
     position: relative;
+    transition: color 0.3s ease;
 }
 
-/* effet underline luxe */
+/* EFFET LIGNE DORÉE AU SURVOL */
 nav a::after {
     content: "";
     position: absolute;
-    bottom: 10px;
+    bottom: 12px;
     left: 50%;
     width: 0;
     height: 2px;
-    background: var(--or);
-    transition: 0.3s;
+    background: #c6a85b;
+    transition: 0.3s ease;
     transform: translateX(-50%);
 }
 
 nav a:hover::after {
     width: 60%;
+}
+
+nav a:hover {
+    color: #c6a85b;
+}
+
+/* LOGO À GAUCHE */
+.logo {
+    height: 55px;
+    border-radius: 10px;
+}
+
+/* si tu veux coller le logo à gauche */
+nav ul li:first-child {
+    margin-right: auto;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        padding: 15px 10px;
+    }
 }
 
 /* LOGO */
