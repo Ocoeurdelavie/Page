@@ -1,143 +1,147 @@
-/* RESET SIMPLE */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* VARIABLES COULEURS */
+/* VARIABLES */
 :root {
-    --noir: #0f0f0f;
-    --noir-doux: #1c1c1c;
-    --blanc: #ffffff;
-    --gris-clair: #f5f5f5;
-    --or: #d4af37;
-    --or-doux: #c9a227;
+    --or: #c6a85b;
+    --or-clair: #e5d3a1;
+    --noir: #111;
+    --gris: #666;
+    --fond: #faf9f6;
+    --blanc: #fff;
 }
 
-/* NAVIGATION */
+/* BODY */
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: var(--fond);
+    color: var(--noir);
+    line-height: 1.6;
+}
+
+/* NAVBAR ULTRA CLEAN */
 nav {
-    background: var(--noir);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
 }
 
 nav ul {
     display: flex;
     align-items: center;
-}
-
-nav li {
-    display: flex;
-    align-items: center;
-    transition: background 0.3s ease;
+    justify-content: center;
+    gap: 30px;
 }
 
 nav a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--blanc);
+    color: var(--noir);
     text-decoration: none;
-    padding: 20px;
+    padding: 20px 10px;
     font-weight: 500;
-    letter-spacing: 0.5px;
+    position: relative;
 }
 
-nav li:hover {
-    background: linear-gradient(120deg, var(--noir-doux), #2a2a2a);
+/* effet underline luxe */
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--or);
+    transition: 0.3s;
+    transform: translateX(-50%);
 }
 
-nav a:hover {
-    color: var(--or);
+nav a:hover::after {
+    width: 60%;
 }
 
 /* LOGO */
 .logo {
-    height: 60px;
-    border-radius: 12px;
+    height: 50px;
 }
 
-/* BODY */
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(120deg, #111, #1a1a1a);
-    color: var(--blanc);
-}
-
-/* BANNIÈRE */
+/* BANNIÈRE STYLE HERO */
 .banniere {
-    width: 100%;
+    height: 70vh;
     overflow: hidden;
+    position: relative;
 }
 
 .banniere img {
     width: 100%;
-    height: 300px;
+    height: 100%;
     object-fit: cover;
+    filter: brightness(75%);
+}
+
+/* TEXTE SUR IMAGE */
+.banniere::after {
+    content: "Bienvenue";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 2px;
 }
 
 /* CONTENU */
 .contenu {
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 0 20px;
-    text-align: center;
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 25px;
 }
 
 /* TITRES */
 h2 {
-    margin-top: 40px;
-    margin-bottom: 15px;
-    color: var(--or);
-    font-size: 1.8rem;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 400;
     position: relative;
 }
 
-h2::after {
+/* ligne fine luxe */
+h2::before {
     content: "";
     display: block;
-    width: 70px;
-    height: 3px;
+    width: 40px;
+    height: 2px;
     background: var(--or);
-    margin-top: 10px;
-    border-radius: 2px;
+    margin-bottom: 10px;
 }
 
+/* TEXTE */
 h3 {
-    font-weight: 300;
-    margin: 10px 0 10px 0;
-    font-size: 1.1rem;
-    color: #ddd;
-}
-
-/* LIENS RÉSEAUX */
-a img {
-    width: 45px;
-    height: 45px;
-    filter: grayscale(40%);
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-a img:hover {
-    transform: scale(1.15);
-    filter: grayscale(0%);
-}
-
-/* CARTE / BULLE */
-.bulle-bleue {
-    background: linear-gradient(135deg, #1a1a1a, #222);
-    border-left: 4px solid var(--or);
-    padding: 25px 30px;
-    margin: 40px 0;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-}
-
-/* TEXTE BULLE */
-.bulle-bleue h3 {
+    color: var(--gris);
+    font-weight: 400;
     margin-bottom: 20px;
-    color: var(--blanc);
-    line-height: 1.6;
+}
+
+/* CARTES MODERNES */
+.bulle-bleue {
+    background: var(--blanc);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    margin: 40px 0;
+    transition: 0.3s;
+}
+
+/* hover premium */
+.bulle-bleue:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
 }
 
 /* LISTE */
@@ -146,49 +150,62 @@ a img:hover {
 }
 
 .bulle-bleue li {
-    position: relative;
-    padding-left: 25px;
     margin-bottom: 10px;
-    color: #ccc;
+    padding-left: 20px;
+    position: relative;
 }
 
-/* PUCE PERSONNALISÉE */
+/* point doré subtil */
 .bulle-bleue li::before {
-    content: "●";
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: var(--or);
+    border-radius: 50%;
     position: absolute;
     left: 0;
-    color: var(--or);
+    top: 8px;
+}
+
+/* ICONES */
+a img {
+    width: 40px;
+    margin-top: 20px;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+a img:hover {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 /* LOCALISATION */
 .localisation-wrapper {
     position: relative;
-    margin-top: 40px;
 }
 
+/* PAPILLON PLUS DISCRET */
 .papillon-localisation {
     position: absolute;
+    right: -120px;
     top: 0;
-    right: -150px;
-    width: 200px;
-    opacity: 0.6;
+    width: 150px;
+    opacity: 0.2;
 }
 
 /* RESPONSIVE */
-@media (max-width: 1200px) {
-    .contenu {
-        text-align: left;
-    }
-
-    .papillon-localisation {
-        right: -80px;
-        width: 120px;
-    }
-}
-
 @media (max-width: 768px) {
-    .contenu {
-        text-align: center;
+    .banniere {
+        height: 50vh;
+    }
+
+    .banniere::after {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        gap: 15px;
     }
 
     .papillon-localisation {
