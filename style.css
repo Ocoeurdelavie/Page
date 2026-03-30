@@ -89,7 +89,7 @@ nav a.btn:hover {
 /* MOBILE */
 @media (max-width: 768px) {
     nav {
-        width: 95%;
+        width: 100%;
     }
 
     nav ul {
