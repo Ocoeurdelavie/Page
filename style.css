@@ -23,62 +23,80 @@ body {
     line-height: 1.6;
 }
 
-/* NAVBAR VERSION AMÉLIORÉE (GARDE TA STRUCTURE) */
+
 nav {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     position: sticky;
-    top: 0;
+    top: 20px; /* ⬅️ effet flottant */
+    margin: 20px auto;
+    width: 90%;
+    border-radius: 20px;
     z-index: 1000;
 }
+
 
 nav ul {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* ⬅️ important */
-    padding: 0 30px;
+    padding: 10px 25px;
+    gap: 20px;
 }
 
-/* pour espacer les liens */
-nav li {
-    list-style: none;
+
+.logo {
+    height: 50px;
 }
 
-/* LIENS */
+/* pousse  droite */
+nav ul li:first-child {
+    margin-right: auto;
+}
+
+
 nav a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: #111;
     text-decoration: none;
-    padding: 20px 15px;
+    padding: 12px 18px;
+    border-radius: 12px;
     font-weight: 500;
-    position: relative;
-    transition: color 0.3s ease;
+    transition: 0.3s;
 }
 
-/* EFFET LIGNE DORÉE AU SURVOL */
-nav a::after {
-    content: "";
-    position: absolute;
-    bottom: 12px;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: #c6a85b;
-    transition: 0.3s ease;
-    transform: translateX(-50%);
-}
-
-nav a:hover::after {
-    width: 60%;
-}
 
 nav a:hover {
+    background: rgba(198,168,91,0.15);
     color: #c6a85b;
 }
 
+
+nav a.active {
+    background: #c6a85b;
+    color: white;
+    box-shadow: 0 4px 15px rgba(198,168,91,0.4);
+}
+
+
+nav a.btn {
+    background: #111;
+    color: white;
+}
+
+nav a.btn:hover {
+    background: #c6a85b;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    nav {
+        width: 95%;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
 /* LOGO À GAUCHE */
 .logo {
     height: 55px;
